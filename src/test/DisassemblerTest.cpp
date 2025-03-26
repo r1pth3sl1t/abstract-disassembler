@@ -45,7 +45,9 @@ TEST_DEFINITION(sub) {
 
 TEST_DEFINITION(jl) {
     //true tests
-    ASSERT_EQUALS(test("92 F1"), "JL [0xF1]", "92 F1");
+    ASSERT_EQUALS(test("92 F1"), "JL -15", "92 F1");
+    ASSERT_EQUALS(test("92 11"), "JL 17", "92 11");
+    ASSERT_EQUALS(test("92 A1"), "JL -95", "92 A1");
     ASSERT_EQUALS(test("93 00 00 C1 F1"), "JL [0x0000C1F1]", "93 00 00 C1 F1");
     //false tests
     ASSERT_THROWS(test("93 00 00 C1"), "93 00 00 C1"); // 3 byte relative address instead of 4
